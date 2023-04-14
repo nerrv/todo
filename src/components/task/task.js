@@ -67,10 +67,7 @@ export default class Task extends Component {
           <input id={id} className="toggle" type="checkbox" onClick={onToggleDone} defaultChecked={done} />
           <label htmlFor={id}>
             <span className="description">{label}</span>
-            <span className="created">
-              created
-              {time}
-            </span>
+            <span className="created">created {time}</span>
           </label>
           <button type="button" className="icon icon-edit" onClick={onToggleEdited} aria-label="edit" />
           <button type="button" className="icon icon-destroy" onClick={onDeleted} aria-label="delete" />
