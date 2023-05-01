@@ -1,0 +1,11 @@
+.todo-list li label .description span {
+  margin-left: 10px;
+}
+
+.icon-pause:after {
+  content: '⏸';
+}
+
+.icon-play:after {
+  content: '▶';
+}

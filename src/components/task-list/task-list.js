@@ -25,7 +25,7 @@ export default class TaskList extends Component {
     const { tasks, onDeleted, onEdited, onToggleEdited, onToggleDone } = this.props
 
     const elements = tasks.map((item) => {
-      const { id, label, done, edit, date } = item
+      const { id, label, done, edit, date, minutes, seconds } = item
 
       return (
         <Task
@@ -35,6 +35,8 @@ export default class TaskList extends Component {
           done={done}
           edit={edit}
           date={date}
+          minutes={minutes}
+          seconds={seconds}
           onDeleted={() => onDeleted(id)}
           onEdited={onEdited}
           onToggleEdited={() => onToggleEdited(id)}

@@ -14,9 +14,11 @@ export default class App extends Component {
     filter: 'all',
   }
 
-  createTask(label) {
+  createTask(label, minutes, seconds) {
     return {
       label,
+      minutes,
+      seconds,
       done: false,
       edit: false,
       id: this.maxId++,
@@ -24,8 +26,8 @@ export default class App extends Component {
     }
   }
 
-  addTask = (text) => {
-    const newTask = this.createTask(text)
+  addTask = (text, minutes, seconds) => {
+    const newTask = this.createTask(text, minutes, seconds)
 
     this.setState(({ taskData }) => {
       const newTasks = [newTask, ...taskData]
