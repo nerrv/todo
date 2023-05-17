@@ -49,17 +49,6 @@ export default class Task extends Component {
     })
   }
 
-  changeClassNames = (done, edit) => {
-    let classNames = ''
-    if (done) {
-      classNames = 'completed'
-    }
-    if (edit) {
-      classNames = 'editing'
-    }
-    return classNames
-  }
-
   render() {
     const { label, id, edit, done, date, minutes, seconds, onDeleted, onToggleEdited, onToggleDone } = this.props
     const time = formatDistanceToNow(date, {
@@ -68,7 +57,7 @@ export default class Task extends Component {
     })
 
     return (
-      <li className={this.changeClassNames(done, edit)}>
+      <li className={(done && 'completed') || (edit && 'editing')}>
         <div className="view">
           <input id={id} className="toggle" type="checkbox" onClick={onToggleDone} defaultChecked={done} />
           <label htmlFor={id}>

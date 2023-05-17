@@ -24,7 +24,7 @@ export default class TasksFilter extends Component {
 
     const buttons = this.buttons.map(({ name, label }) => {
       const isActive = filter === name
-      const btnClass = isActive ? 'selected' : null
+      const btnClass = isActive && 'selected'
       return (
         <li key={name}>
           <button type="button" className={btnClass} onClick={() => onFilterChange(name)}>
